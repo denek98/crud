@@ -16,7 +16,7 @@ git clone https://github.com/denek98/crud
 cd crud
 docker-composer up --build -d
 ```
-3. Go to 0.0.0.0:8337 in your browser (port can be changed in .env file)
+3. Go to http://0.0.0.0:8337 in your browser (port can be changed in .env file)
 
 To shut the docker containers down simply run
 ```sh
