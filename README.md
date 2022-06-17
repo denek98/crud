@@ -9,13 +9,14 @@ Here is a primitive CRUD project using Fast Api as ASGI, Piccolo as ORM and Dock
 ### How to run
 1. Clone the repo
 ```sh
-git clone https://github.com/denek98/car_crud
+git clone https://github.com/denek98/crud
 ```
 2. Build up Docker
 ```sh
-cd car_crud
+cd crud
 docker-composer up --build -d
 ```
+3. Go to 0.0.0.0:8337 in your browser (port can be changed in .env file)
 
 To shut the docker containers down simply run
 ```sh
