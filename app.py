@@ -64,12 +64,17 @@ async def get_coordinates_by_id(car_id: int):
     '''
     Get car coordinates from external table by it's ID
     '''
-    vin_code = await Car.select(Car.vin_code).where(Car.id == car_id).first()
-    vin_code = vin_code['vin_code']
     try:
-        return await Gps.select().where(Gps.car_vin_code == vin_code)
+        vin_code = await Car.select(Car.vin_code).where(Car.id == car_id).first()
+        if not vin_code:
+            return JSONResponse(status_code=404, content="There is no car with this id")
+        vin_code = vin_code['vin_code']
+        car_coordinates = await Gps.select().where(Gps.car_vin_code == vin_code)
+        if not car_coordinates:
+            return JSONResponse(status_code=404, content="There is no info about coordinates for this car id")
     except:
         return JSONResponse(status_code=404, content="404 - No items avaliable")
+        
 
 
 @app.post("/cars/", response_model=CarModelOut, tags=['Cars'])
