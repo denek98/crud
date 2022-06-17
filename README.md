@@ -26,3 +26,6 @@ docker-compose down
 
 ### Good to know
 There's a `.env` file included to set the needed environment variables for the different parts of the app to run.
+
+# Swagger
+![swagger](https://github.com/denek98/crud/blob/master/swagger.png?raw=True)
