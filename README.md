@@ -1,11 +1,3 @@
-## Setup
-
-### Install requirements
-
-```bash
-pip install -r requirements.txt
-```
-
 # Simple Car Logistic CRUD Project
 Here is a primitive CRUD project using Fast Api as ASGI, Piccolo as ORM and Docker as container
 
